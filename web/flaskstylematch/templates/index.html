@@ -1,0 +1,31 @@
+
+<script>
+
+  function filesize(elem){
+    document.cookie = `filesize=${elem.files[0].size}`
+  }
+
+</script>
+
+
+<html>
+    <head>
+        <title>Style Match</title>
+        <link rel="stylesheet" href={{ url_for('static',filename='styles/style.css') }}>
+        <script src={{ url_for('static',filename='styles/script.js') }}></script>
+    </head>
+    <body>
+
+        <h1>Style Match</h1>
+        Upload a chair to find a rug that goes well with it.
+        <br>
+        <br>
+
+        <form id='upload_form' method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+            <input type='file' name='image' accept='image/*' oninput="filesize(this);">
+            <input type="submit" value='Find Matching Rugs' onclick="$('#loading').show();">
+        </form>
+
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Style Match</title>
+        <link rel="stylesheet" href={{ url_for('static',filename='styles/style.css') }}>
+        <script src={{ url_for('static',filename='styles/script.js') }}></script>
+    </head>
+    <body>
+
+
+    <h1>Style Match</h1>
+    <a href="javascript:history.back()">Go Back</a>
+
+    <br><br>
+    
+
+    <br>
+
+    <img width = "300px" src='/static/images/{{ filename }}'>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+    <a href={{first_link}}><img width = "200px" src="/static/rugs/{{ first_rug }}" ></a>
+    &nbsp &nbsp
+    <a href={{second_link}}><img width = "200px" src="/static/rugs/{{ second_rug }}"></a>
+    &nbsp &nbsp
+    <a href={{third_link}}><img width = "200px" src="/static/rugs/{{ third_rug }}"></a>
+
+    <br>
+
+    &nbsp &nbsp &nbsp 
+    Your chair is <font size="6">{{ style_class }}</font>
+    &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp 
+    These three <font size="6">{{ style_class }}</font> rugs match the style and color of your chair
+
+    </body>
+</html>
